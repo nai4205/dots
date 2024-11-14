@@ -1,0 +1,107 @@
+/* /home/nai/dots/firefoxHome/styles.css */
+*{
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #54296e;
+    --secondary-color: #7b5196;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+
+    --banner-gradient: linear-gradient(45deg, #6C2281, #972619);
+
+    --link-color: #3498db;
+    --link-hover-color: #2980b9;
+    --text-shadow-gradient: linear-gradient(-45deg, #4c0080, #863ce7, #c749e0, #ff0000);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    background: var(--banner-gradient);
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.gradient-text {
+    color: var(--text-color);
+    background: var(--text-shadow-gradient);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 3px transparent;
+    padding: 1em;
+}
+
+header h1 {
+    margin: 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+main {
+    padding: 2rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.favorites-list {
+    list-style: none;
+    padding: 0;
+}
+
+.favorite-item {
+    margin: 0.5rem 0;
+}
+
+.favorite-link {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.favorite-link:hover {
+    color: var(--link-hover-color);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
