@@ -26,6 +26,7 @@ let currentSiteIndex = 0;
 
 
 
+
 function renderSites() {
     track.innerHTML = '';
     previewContainer.innerHTML = '';
@@ -38,8 +39,8 @@ function renderSites() {
                 <h3>${site.icon}</h3>
                 <div class="container">
                     <h3>${site.title}</h3>
-                    
                     <p>${site.description}</p>
+                    ${site.url ? `<a class="site-url" href="${site.url}" target="_blank">${site.url}</a>` : ''}
                 </div>
             </div>
         `;
@@ -60,6 +61,7 @@ function renderSites() {
 
     updateCarousel();
 }
+
 
 function updateCarousel() {
     const amountToMove = track.children[0].getBoundingClientRect().width;
@@ -85,6 +87,11 @@ function loadSiteToForm(index) {
     siteTitleInput.value = site.title;
     siteDescriptionInput.value = site.description;
     siteIconInput.value = site.icon;
+
+    const siteUrlInput = document.getElementById('site-url');
+    if (siteUrlInput) {
+        siteUrlInput.value = site.url || '';
+    }
 }
 
 siteForm.addEventListener('submit', (e) => {
@@ -107,10 +114,14 @@ deleteButton.addEventListener('click', () => {
 
 
 function saveSite() {
+    const siteUrlInput = document.getElementById('site-url');
+    const siteUrl = siteUrlInput ? siteUrlInput.value : '';
+
     favouriteSites[currentSiteIndex] = {
         icon: siteIconInput.value,
         title: siteTitleInput.value,
         description: siteDescriptionInput.value,
+        url: siteUrl,
     };
     storeFavouriteSites();
     renderSites();
