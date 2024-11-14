@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,  // Downgrade to version 2 for compatibility
+  "name": "Custom New Tab Page",
+  "version": "1.0",
+  "description": "A Firefox extension that opens a custom page on new tab.",
+  "permissions": ["tabs", "storage"],
+  "chrome_url_overrides": {
+    "newtab": "firefoxHome/index.html"
+  },
+  "chrome_settings_overrides": {
+    "homepage": "firefoxHome/index.html"
+  },
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
