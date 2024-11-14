@@ -219,3 +219,111 @@ window.addEventListener('load', function() {
         document.getElementById('bottom-border-radius').value = bottomBorderRadius;
     }
 });
+
+// Handle edit background button click
+document.getElementById('edit-background-button').addEventListener('click', function() {
+    const selectedOption = document.getElementById('background-options').value;
+    if (selectedOption === 'container-background') {
+        document.getElementById('container-background-modal').style.display = 'flex';
+        document.getElementById('top-background-modal').style.display = 'none';
+        document.getElementById('bottom-background-modal').style.display = 'none';
+    } else if (selectedOption === 'top-background') {
+        document.getElementById('container-background-modal').style.display = 'none';
+        document.getElementById('top-background-modal').style.display = 'flex';
+        document.getElementById('bottom-background-modal').style.display = 'none';
+    } else if (selectedOption === 'bottom-background') {
+        document.getElementById('container-background-modal').style.display = 'none';
+        document.getElementById('top-background-modal').style.display = 'none';
+        document.getElementById('bottom-background-modal').style.display = 'flex';
+    }
+});
+
+// Handle container background color picker
+document.getElementById('container-background-color-picker').addEventListener('input', function(event) {
+    const color = event.target.value;
+    document.getElementById('container').style.backgroundColor = color;
+    localStorage.setItem('containerBackgroundColor', color);
+});
+
+// Handle container background opacity input
+document.getElementById('container-background-opacity').addEventListener('input', function(event) {
+    const opacity = event.target.value;
+    document.getElementById('container').style.backgroundColor = `rgba(${hexToRgb(localStorage.getItem('containerBackgroundColor'))}, ${opacity})`;
+    localStorage.setItem('containerBackgroundOpacity', opacity);
+});
+
+// Handle top background color picker
+document.getElementById('top-background-color-picker').addEventListener('input', function(event) {
+    const color = event.target.value;
+    document.getElementById('top').style.backgroundColor = color;
+    localStorage.setItem('topBackgroundColor', color);
+});
+
+// Handle top background opacity input
+document.getElementById('top-background-opacity').addEventListener('input', function(event) {
+    const opacity = event.target.value;
+    document.getElementById('top').style.backgroundColor = `rgba(${hexToRgb(localStorage.getItem('topBackgroundColor'))}, ${opacity})`;
+    localStorage.setItem('topBackgroundOpacity', opacity);
+});
+
+// Handle bottom background color picker
+document.getElementById('bottom-background-color-picker').addEventListener('input', function(event) {
+    const color = event.target.value;
+    document.getElementById('bottom').style.backgroundColor = color;
+    localStorage.setItem('bottomBackgroundColor', color);
+});
+
+// Handle bottom background opacity input
+document.getElementById('bottom-background-opacity').addEventListener('input', function(event) {
+    const opacity = event.target.value;
+    document.getElementById('bottom').style.backgroundColor = `rgba(${hexToRgb(localStorage.getItem('bottomBackgroundColor'))}, ${opacity})`;
+    localStorage.setItem('bottomBackgroundOpacity', opacity);
+});
+
+// Load background color and opacity from local storage on page load
+window.addEventListener('load', function() {
+    const containerBackgroundColor = localStorage.getItem('containerBackgroundColor');
+    if (containerBackgroundColor) {
+        document.getElementById('container').style.backgroundColor = containerBackgroundColor;
+        document.getElementById('container-background-color-picker').value = containerBackgroundColor;
+    }
+
+    const containerBackgroundOpacity = localStorage.getItem('containerBackgroundOpacity');
+    if (containerBackgroundOpacity) {
+        document.getElementById('container').style.backgroundColor = `rgba(${hexToRgb(containerBackgroundColor)}, ${containerBackgroundOpacity})`;
+        document.getElementById('container-background-opacity').value = containerBackgroundOpacity;
+    }
+
+    const topBackgroundColor = localStorage.getItem('topBackgroundColor');
+    if (topBackgroundColor) {
+        document.getElementById('top').style.backgroundColor = topBackgroundColor;
+        document.getElementById('top-background-color-picker').value = topBackgroundColor;
+    }
+
+    const topBackgroundOpacity = localStorage.getItem('topBackgroundOpacity');
+    if (topBackgroundOpacity) {
+        document.getElementById('top').style.backgroundColor = `rgba(${hexToRgb(topBackgroundColor)}, ${topBackgroundOpacity})`;
+        document.getElementById('top-background-opacity').value = topBackgroundOpacity;
+    }
+
+    const bottomBackgroundColor = localStorage.getItem('bottomBackgroundColor');
+    if (bottomBackgroundColor) {
+        document.getElementById('bottom').style.backgroundColor = bottomBackgroundColor;
+        document.getElementById('bottom-background-color-picker').value = bottomBackgroundColor;
+    }
+
+    const bottomBackgroundOpacity = localStorage.getItem('bottomBackgroundOpacity');
+    if (bottomBackgroundOpacity) {
+        document.getElementById('bottom').style.backgroundColor = `rgba(${hexToRgb(bottomBackgroundColor)}, ${bottomBackgroundOpacity})`;
+        document.getElementById('bottom-background-opacity').value = bottomBackgroundOpacity;
+    }
+});
+
+// Helper function to convert hex color to rgb
+function hexToRgb(hex) {
+    const bigint = parseInt(hex.slice(1), 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return `${r}, ${g}, ${b}`;
+}

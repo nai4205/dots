@@ -165,6 +165,67 @@
                 </div>
             </div>
 
+            <div class="setting-item">
+                <label for="background-options">Select Background to Edit:</label>
+                <select id="background-options">
+                    <option value="container-background">Container Background</option>
+                    <option value="top-background">Top Background</option>
+                    <option value="bottom-background">Bottom Background</option>
+                </select>
+                <button id="edit-background-button" class="button">Edit Background</button>
+            </div>
+
+            <div id="container-background-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Edit Container Background</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="container-background-color-picker">Background Color:</label>
+                            <input type="color" id="container-background-color-picker" name="container-background-color-picker">
+                        </div>
+                        <div class="setting-item">
+                            <label for="container-background-opacity">Opacity:</label>
+                            <input type="range" id="container-background-opacity" name="container-background-opacity" min="0" max="1" step="0.01">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="top-background-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Edit Top Background</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="top-background-color-picker">Background Color:</label>
+                            <input type="color" id="top-background-color-picker" name="top-background-color-picker">
+                        </div>
+                        <div class="setting-item">
+                            <label for="top-background-opacity">Opacity:</label>
+                            <input type="range" id="top-background-opacity" name="top-background-opacity" min="0" max="1" step="0.01">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bottom-background-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Edit Bottom Background</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="bottom-background-color-picker">Background Color:</label>
+                            <input type="color" id="bottom-background-color-picker" name="bottom-background-color-picker">
+                        </div>
+                        <div class="setting-item">
+                            <label for="bottom-background-opacity">Opacity:</label>
+                            <input type="range" id="bottom-background-opacity" name="bottom-background-opacity" min="0" max="1" step="0.01">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     
         </div>
     </div>

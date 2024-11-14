@@ -33,7 +33,7 @@ body {
     color: var(--text-color);
     display: flex;
     justify-content: center;
-    align-items: top;
+    align-items: flex-start;
     min-height: 100vh;
     margin: 5em;
 }
