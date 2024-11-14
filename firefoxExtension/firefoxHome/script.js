@@ -191,3 +191,4 @@ loadFavouriteSites();
 
 // Initial Render
 renderSites();
+

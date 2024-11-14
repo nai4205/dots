@@ -1,7 +1,7 @@
 :root {
     /* Customizable Variables */
     --bg-color: #1A0240;
-    --header-color: #000000;
+    --header-color: #ffffff;
     --header-gradient: linear-gradient(-45deg, #d536e4, #d536e4, #a223d5, #ec573d);
     --text-color: #ffffff;
     --url-color: #ffffff6e;
@@ -39,7 +39,8 @@ body {
 }
 
 #container {
-    width: 90%;
+    width: 40%;
+    align-self: center;
     height: auto;
     text-align: center;
     padding: 1em;
@@ -193,11 +194,11 @@ header h1 {
 
 #favourite-sites-header {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 #edit-button {
+    margin-left: 1em;
     background: none;
     border: none;
     color: var(--text-color);
