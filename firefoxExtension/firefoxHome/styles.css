@@ -40,8 +40,9 @@ body {
 
 #container {
     width: 90%;
-    max-width: 1000px;
+    height: auto;
     text-align: center;
+    padding: 1em;
 }
 
 
@@ -90,6 +91,8 @@ header h1 {
 .widget:hover {
     background-color: var(--widget-hover-color);
 }
+
+/* Favorite Sites */
 
 .sites h2 {
     font-size: 1.5rem;
@@ -186,10 +189,15 @@ header h1 {
     -webkit-text-stroke: 4px transparent;
 }
 
-#settings-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+/* Edit favourite sites */
+
+#favourite-sites-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#edit-button {
     background: none;
     border: none;
     color: var(--text-color);
@@ -263,4 +271,25 @@ header h1 {
 #add-site {
     background-color: #ff9100;
     color: white;
+}
+
+/* Settings */
+#settings-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#top {
+    margin: 1em;
+    padding: 0.5em;
+}
+#bottom {
+    padding: 0.5em;
+    margin: 1em;
 }

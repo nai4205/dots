@@ -5,39 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></head>
 <body>
     <div id="container">
-        <header>
-            <h1>Home</h1>
-            <form action="https://www.google.com/search" method="get">
-                <input type="text" name="q" class="search-bar" placeholder="Search with Google or enter address">
-            </form>
-            <button id="settings-button">⚙️</button>
-        </header>
-        
-        <section class="widgets">
-            <div class="widget" id="widget1">Custom</div>
-            <div class="widget" id="widget2">Custom</div>
-        </section>
-        
-        <section class="favourite-sites">
-            <h2>Favourite Sites</h2>
-            <div class="carousel">
-                <div class="carousel-track" id="carousel-track">
-                    <!-- Favourite sites will be dynamically inserted here -->
-                </div>
-
-            </div>
+        <div id ="top">
+            <button id="settings-button" class="material-icons">settings</button>
+            <header>
+                <h1>Home</h1>
+                <form action="https://www.google.com/search" method="get">
+                    <input type="text" name="q" class="search-bar" placeholder="Search with Google or enter address">
+                </form>
+                
+            </header>
             
-            <div class="site-preview" id="site-preview">
-                <!-- Preview icons will be dynamically inserted here -->
-            </div>
-        </section>
+            <section class="widgets">
+                <div class="widget" id="widget1">Custom</div>
+                <div class="widget" id="widget2">Custom</div>
+            </section>
+        </div>
+        
+        <div id="bottom">
+            <section class="favourite-sites">
+                <div id="favourite-sites-header">
+                    <h2>Favourite Sites</h2>
+                    <button id="edit-button" class="material-icons">edit</button>
+                </div>
+                <div class="carousel">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Favourite sites will be dynamically inserted here -->
+                    </div>
+
+                </div>
+                
+                <div class="site-preview" id="site-preview">
+                    <!-- Preview icons will be dynamically inserted here -->
+                </div>      
+            </section>
+        </div>
     </div>
 
-    <!-- Settings Modal -->
-    <div id="settings-modal" class="modal">
+
+    <div id="edit-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Edit Favourite Sites</h2>
@@ -60,6 +68,119 @@
         </div>
     </div>
 
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="background-upload" class="button">Upload Background Image</label>
+                    <input type="file" id="background-upload" name="background-upload" accept="image/*" style="display:none;">
+                </div>
+            <div class="setting-item">
+                <label for="background-color-picker">Background Color:</label>
+                <input type="color" id="background-color-picker" name="background-color-picker">
+            </div>
+  
+            <div class="setting-item"></div>
+                <label for="border-options">Select Border to Edit:</label>
+                <select id="border-options">
+                    <option value="container">Container</option>
+                    <option value="top">Top</option>
+                    <option value="bottom">Bottom</option>
+                </select>
+                <button id="edit-border-button" class="button">Edit Border</button>
+            </div>
+
+            <div id="container-border-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Edit Border</h2>
+                    <div class="settings-grid">
+                        <h3 id="border-title">Container borders</h3>
+                        <div class="setting-item">
+                            <label for="border-color-picker">Border Color:</label>
+                            <input type="color" id="container-border-color-picker" name="border-color-picker">
+                        </div>
+                        <div class="setting-item">
+                            <label for="border-width">Border Width:</label>
+                            <input id="container-border-width" name="border-width"></input>
+                        </div>
+                        <div class="setting-item">
+                            <label for="border-radius">Border Radius:</label>
+                            <input id="container-border-radius" name="border-radius"></input>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <button id="remove-container-border" class="button">Remove Border</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="top-border-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Edit Top Border</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="top-border-color-picker">Border Color:</label>
+                            <input type="color" id="top-border-color-picker" name="top-border-color-picker">
+                        </div>
+                        <div class="setting-item">
+                            <label for="top-border-width">Border Width:</label>
+                            <input id="top-border-width" name="top-border-width"></input>
+                        </div>
+                        <div class="setting-item">
+                            <label for="top-border-radius">Border Radius:</label>
+                            <input id="top-border-radius" name="top-border-radius"></input>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <button id="remove-top-border" class="button">Remove Border</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bottom-border-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Edit Bottom Border</h2>
+                    <div class="settings-grid">
+                        <div class="setting-item">
+                            <label for="bottom-border-color-picker">Border Color:</label>
+                            <input type="color" id="bottom-border-color-picker" name="bottom-border-color-picker">
+                        </div>
+                        <div class="setting-item">
+                            <label for="bottom-border-width">Border Width:</label>
+                            <input id="bottom-border-width" name="bottom-border-width"></input>
+                        </div>
+                        <div class="setting-item">
+                            <label for="bottom-border-radius">Border Radius:</label>
+                            <input id="bottom-border-radius" name="bottom-border-radius"></input>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <button id="remove-bottom-border" class="button">Remove Border</button>
+                    </div>
+                </div>
+            </div>
+
+    
+        </div>
+    </div>
+    
+
+    <div id="delete-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Confirm Delete</h2>
+            <p>Are you sure you want to delete this site?</p>
+            <button id="confirm-delete">Yes, Delete</button>
+            <button id="cancel-delete">Cancel</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="settings.js"></script>
 </body>
 </html>
