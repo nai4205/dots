@@ -10,6 +10,7 @@
     <div id="container">
         <div id ="top">
             <button id="settings-button" class="material-icons">settings</button>
+
             <header>
                 <h1>Custom Homepage :)</h1>
                 <form action="https://www.google.com/search" method="get">
@@ -91,6 +92,8 @@
                 </select>
                 <button id="edit-border-button" class="button">Edit Border</button>
             </div>
+
+
 
             <div id="container-border-modal" class="modal">
                 <div class="modal-content">
@@ -225,8 +228,33 @@
                     </div>
                 </div>
             </div>
+            <label>Save and load:</label>
+            <div class="setting-item">
+                <button id="save-config-button" class="button">Save Config</button>
+                <button id="load-config-button" class="button">Load Config</button>
+            </div>
 
-    
+            <div id="save-config-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Save Configuration</h2>
+                    <input type="text" id="save-name" placeholder="Enter save name">
+                    <button id="save-config-confirm-button" class="button">Save</button>
+                    <div id="save-slots">
+                        <!-- Save slots will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="load-config-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Load Configuration</h2>
+                    <div id="load-slots">
+                        <!-- Load slots will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -243,5 +271,6 @@
 
     <script src="script.js"></script>
     <script src="settings.js"></script>
+    <script src="save.js"></script>
 </body>
 </html>
