@@ -15,5 +15,12 @@
   },
   "background": {
     "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "addon@example.com",
+    "strict_min_version": "58.0"
   }
+}
+
 }
